@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental PS Zahran - Sewa PlayStation Tangerang</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        psblue: '#00439C',
+                        psdarkblue: '#001944',
+                        psneon: '#0070d1',
+                        psglow: '#00d4ff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        gaming: ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080b12;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 67, 156, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 40%),
+                linear-gradient(to bottom, rgba(8, 11, 18, 0.85), rgba(8, 11, 18, 0.95)),
+                url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .ps-glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ps-card-active {
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            background: rgba(0, 67, 156, 0.3);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+        }
+
+        /* Wave dynamic wave background accent */
+        .ps3-wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.15;
+            background: radial-gradient(ellipse at center, rgba(0,112,209,0.5) 0%, rgba(0,0,0,0) 70%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+    <div class="ps3-wave"></div>
+
+    <!-- Header / Navbar -->
+    <header class="ps-glass sticky top-0 z-50 px-4 py-3 border-b border-blue-500/20">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-psblue to-psglow flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <i class="fa-brands font-bold text-xl text-white">🎮</i>
+                </div>
+                <div>
+                    <h1 class="font-gaming font-bold text-xl md:text-2xl tracking-wider text-white glow-text">RENTAL PS ZAHRAN</h1>
+                    <p class="text-xs text-blue-300">Sewa PlayStation Cepat & Mudah</p>
+                </div>
+            </div>
+            <a href="#order-form" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold px-4 py-2 rounded-xl transition-all shadow-md hover:shadow-cyan-500/25">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Pesan Sekarang</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-4 pt-8 pb-4 text-center">
+        <div class="inline-block bg-blue-900/50 border border-cyan-500/30 px-4 py-1.5 rounded-full text-cyan-300 text-xs md:text-sm font-semibold mb-4 tracking-wide">
+            🔥 Tempat Main & Rental PS Terbaik di Kab. Tangerang
+        </div>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 font-gaming leading-tight">
+            NAGIH MAIN <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-200">PLAYSTATION</span> TANPA RIBET!
+        </h2>
+        <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base mb-6">
+            Menyediakan unit unit PS3, PS4, dan PS5 lengkap dengan stik original, game terupdate, dan siap diantar langsung ke rumah Anda atau main di tempat!
+        </p>
+
+        <!-- Dynamic PS Badges -->
+        <div class="flex justify-center gap-3 md:gap-6 flex-wrap my-6">
+            <div class="ps-glass px-4 py-2 rounded-xl flex items-center gap-2">
+                <i class="fa-solid fa-gamepad text-cyan-400"></i>
+                <span class="text-sm font-semibold text-white">PS3 Ultra Slim</span>
+            </div>
+            <div class="ps-glass px-4 py-2 rounded-xl flex items-center gap-2">
+                <i class="fa-solid fa-gamepad text-blue-400"></i>
+                <span class="text-sm font-semibold text-white">PS4 Pro 4K</span>
+            </div>
+            <div class="ps-glass px-4 py-2 rounded-xl flex items-center gap-2">
+                <i class="fa-solid fa-gamepad text-purple-400"></i>
+                <span class="text-sm font-semibold text-white">PS5 Next-Gen</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Booking Form Section (7 Cols) -->
+        <section id="order-form" class="lg:col-span-7 ps-glass rounded-2xl p-5 md:p-8 relative">
+            <div class="flex items-center gap-3 border-b border-gray-700/60 pb-4 mb-6">
+                <div class="bg-blue-600/30 p-3 rounded-xl border border-blue-400/40 text-cyan-300">
+                    <i class="fa-solid fa-pen-to-square text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-gaming text-white">Formulir Booking Online</h3>
+                    <p class="text-xs text-gray-400">Isi data di bawah untuk pesah secara instan ke WhatsApp</p>
+                </div>
+            </div>
+
+            <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-5">
+                
+                <!-- Nama & No WA -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Nama Lengkap Pemesan *</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-user absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                            <input type="text" id="custName" required placeholder="Contoh: Budi Santoso"
+                                class="w-full bg-slate-900/80 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Nomor HP / WhatsApp *</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-phone absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                            <input type="tel" id="custPhone" required placeholder="08xxxxxxxxxx"
+                                class="w-full bg-slate-900/80 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tipe Console -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-2">Pilih Konsol PlayStation *</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button type="button" onclick="selectConsole('PS3')" id="btn-PS3"
+                            class="console-opt ps-card-active border border-slate-700 bg-slate-900/80 rounded-xl p-3 text-center transition-all hover:border-cyan-400 flex flex-col items-center">
+                            <i class="fa-solid fa-box text-cyan-400 text-lg mb-1"></i>
+                            <span class="font-bold text-sm text-white block">PS 3</span>
+                            <span class="text-[10px] text-cyan-300">Rp 5.000 / Jam</span>
+                        </button>
+                        <button type="button" onclick="selectConsole('PS4')" id="btn-PS4"
+                            class="console-opt border border-slate-700 bg-slate-900/80 rounded-xl p-3 text-center transition-all hover:border-cyan-400 flex flex-col items-center">
+                            <i class="fa-solid fa-gamepad text-blue-400 text-lg mb-1"></i>
+                            <span class="font-bold text-sm text-white block">PS 4</span>
+                            <span class="text-[10px] text-blue-300">Rp 10.000 / Jam</span>
+                        </button>
+                        <button type="button" onclick="selectConsole('PS5')" id="btn-PS5"
+                            class="console-opt border border-slate-700 bg-slate-900/80 rounded-xl p-3 text-center transition-all hover:border-cyan-400 flex flex-col items-center">
+                            <i class="fa-solid fa-vr-cardboard text-purple-400 text-lg mb-1"></i>
+                            <span class="font-bold text-sm text-white block">PS 5</span>
+                            <span class="text-[10px] text-purple-300">Rp 20.000 / Jam</span>
+                        </button>
+                    </div>
+                    <input type="hidden" id="selectedConsole" value="PS3">
+                </div>
+
+                <!-- Tipe Layanan & Durasi -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Layanan Rental *</label>
+                        <select id="rentType" onchange="updateDurationLabel()" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                            <option value="Main di Tempat">Main di Tempat (Rental)</option>
+                            <option value="Sewa Harian (Bawa Pulang)">Sewa Bawa Pulang (Harian)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5" id="durationLabel">Durasi Main (Jam) *</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-clock absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+                            <input type="number" id="rentDuration" min="1" max="72" value="2" required
+                                class="w-full bg-slate-900/80 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tanggal & Jam Booking -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Tanggal Main / Mulai *</label>
+                        <input type="date" id="rentDate" required
+                            class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Jam Main / Pengambilan *</label>
+                        <input type="time" id="rentTime" required
+                            class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                    </div>
+                </div>
+
+                <!-- Pilihan Pembayaran -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-2">Metode Pembayaran *</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="QRIS" checked class="peer hidden">
+                            <div class="border border-slate-700 bg-slate-900/80 rounded-xl p-2.5 text-center peer-checked:border-cyan-400 peer-checked:bg-blue-900/30 transition-all">
+                                <i class="fa-solid fa-qrcode text-cyan-400 text-base block mb-1"></i>
+                                <span class="font-bold text-xs text-white">QRIS</span>
+                                <span class="text-[9px] text-gray-400 block">All E-Wallet</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="DANA" class="peer hidden">
+                            <div class="border border-slate-700 bg-slate-900/80 rounded-xl p-2.5 text-center peer-checked:border-cyan-400 peer-checked:bg-blue-900/30 transition-all">
+                                <i class="fa-solid fa-wallet text-sky-400 text-base block mb-1"></i>
+                                <span class="font-bold text-xs text-white">DANA</span>
+                                <span class="text-[9px] text-gray-400 block">Transfer DANA</span>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="COD (Bayar di Tempat)" class="peer hidden">
+                            <div class="border border-slate-700 bg-slate-900/80 rounded-xl p-2.5 text-center peer-checked:border-cyan-400 peer-checked:bg-blue-900/30 transition-all">
+                                <i class="fa-solid fa-hand-holding-dollar text-emerald-400 text-base block mb-1"></i>
+                                <span class="font-bold text-xs text-white">COD</span>
+                                <span class="text-[9px] text-gray-400 block">Bayar Tunai</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Catatan Tambahan -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">Catatan / Game Request (Opsional)</label>
+                    <textarea id="custNotes" rows="2" placeholder="Contoh: Minta siapkan game PES 2024 / FIFA"
+                        class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                </div>
+
+                <!-- Tombol Submit WhatsApp -->
+                <button type="submit"
+                    class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-bold text-base shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>KIRIM BOOKING VIA WHATSAPP</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Location & Info Sidebar (5 Cols) -->
+        <section class="lg:col-span-5 space-y-6">
+            
+            <!-- Lokasi & Alamat Card -->
+            <div class="ps-glass rounded-2xl p-5 md:p-6">
+                <div class="flex items-center gap-3 border-b border-gray-700/60 pb-3 mb-4">
+                    <i class="fa-solid fa-location-dot text-2xl text-rose-500"></i>
+                    <div>
+                        <h3 class="text-lg font-bold font-gaming text-white">Lokasi Rental</h3>
+                        <p class="text-xs text-blue-300">Kabupaten Tangerang</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/70 p-3.5 rounded-xl border border-slate-800 mb-4 space-y-2">
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        <strong class="text-white">Alamat:</strong><br>
+                        Jl. Kavling Karet, Kab. Tangerang
+                    </p>
+                    <p class="text-xs text-cyan-300 font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-scissors text-amber-400"></i>
+                        <span>Patokan: Samping Pangkas Rambut Asgar</span>
+                    </p>
+                </div>
+
+                <!-- Embedded Google Map -->
+                <div class="w-full h-48 rounded-xl overflow-hidden border border-slate-700 shadow-inner">
+                    <iframe 
+                        title="Peta Lokasi Rental PS Zahran"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.425123985016!2d106.58!3d-6.2081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8e5b5555555%3A0x123456789abcdef!2sJalan%20Kavling%20Karet!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <a href="https://maps.google.com/?q=Jalan+Kavling+Karet+Kabupaten+Tangerang" target="_blank" rel="noopener noreferrer"
+                    class="mt-4 block text-center py-2 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-500/30 transition-all">
+                    <i class="fa-solid fa-map-location-dot mr-1"></i> Buka Petunjuk Arah di Google Maps
+                </a>
+            </div>
+
+            <!-- Metode Pembayaran Info Card -->
+            <div class="ps-glass rounded-2xl p-5 md:p-6">
+                <h3 class="text-base font-bold font-gaming text-white mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+                    <span>Sistem Pembayaran Mudah</span>
+                </h3>
+                <div class="space-y-3 text-xs text-gray-300">
+                    <div class="flex items-start gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                        <i class="fa-solid fa-qrcode text-lg text-cyan-400 mt-0.5"></i>
+                        <div>
+                            <span class="font-bold text-white block">QRIS All Payment</span>
+                            <span>Bisa bayar pakai GoPay, OVO, ShopeePay, BCA, Mandiri, dll.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                        <i class="fa-solid fa-wallet text-lg text-sky-400 mt-0.5"></i>
+                        <div>
+                            <span class="font-bold text-white block">DANA</span>
+                            <span>Transfer instan tanpa biaya admin tambahan.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                        <i class="fa-solid fa-hand-holding-dollar text-lg text-emerald-400 mt-0.5"></i>
+                        <div>
+                            <span class="font-bold text-white block">COD / Bayar di Tempat</span>
+                            <span>Bayar langsung tunai saat main di lokasi atau saat unit diantar.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jam Operasional -->
+            <div class="ps-glass rounded-2xl p-4 text-center border-dashed border-cyan-500/40">
+                <p class="text-xs text-gray-400">Jam Operasional Rental:</p>
+                <p class="text-sm font-bold text-cyan-300 mt-0.5"><i class="fa-regular fa-clock mr-1"></i> Buka Setiap Hari: 09:00 - 24:00 WIB</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="ps-glass border-t border-blue-500/20 py-6 mt-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-xs text-gray-400">
+                &copy; <span id="year"></span> <strong class="text-white">Rental PS Zahran</strong>. Jalan Kavling Karet, Kab. Tangerang (Samping Pangkas Rambut Asgar).
+            </p>
+            <p class="text-[10px] text-gray-500 mt-1">
+                WhatsApp Hotline: <a href="https://wa.me/6285284614142" class="text-cyan-400 hover:underline">0852-8461-4142</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set Default Date to Today
+        document.getElementById('rentDate').valueAsDate = new Date();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Select Console Function
+        function selectConsole(consoleName) {
+            document.getElementById('selectedConsole').value = consoleName;
+            
+            // Remove active style from all buttons
+            document.querySelectorAll('.console-opt').forEach(btn => {
+                btn.classList.remove('ps-card-active');
+            });
+
+            // Add active style to selected button
+            const activeBtn = document.getElementById('btn-' + consoleName);
+            if (activeBtn) {
+                activeBtn.classList.add('ps-card-active');
+            }
+        }
+
+        // Dynamic Duration Label
+        function updateDurationLabel() {
+            const rentType = document.getElementById('rentType').value;
+            const label = document.getElementById('durationLabel');
+            if (rentType.includes('Harian')) {
+                label.textContent = 'Durasi Sewa (Hari) *';
+            } else {
+                label.textContent = 'Durasi Main (Jam) *';
+            }
+        }
+
+        // WhatsApp Ordering Script
+        function handleBooking(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const consoleType = document.getElementById('selectedConsole').value;
+            const rentType = document.getElementById('rentType').value;
+            const duration = document.getElementById('rentDuration').value;
+            const date = document.getElementById('rentDate').value;
+            const time = document.getElementById('rentTime').value;
+            const payment = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const notes = document.getElementById('custNotes').value.trim() || '-';
+
+            const unitUnit = rentType.includes('Harian') ? 'Hari' : 'Jam';
+
+            // Format message for WhatsApp
+            const waNumber = "6285284614142"; // Target WA: 085284614142
+            let message = `*HALO RENTAL PS ZAHRAN, SAYA MAU BOOKING!* 🎮\n\n`;
+            message += `📋 *DATA PEMESAN:* \n`;
+            message += `• Nama: ${name}\n`;
+            message += `• No HP/WA: ${phone}\n\n`;
+            message += `🎮 *DETAIL PESANAN:* \n`;
+            message += `• Unit Konsol: *${consoleType}*\n`;
+            message += `• Jenis Rental: ${rentType}\n`;
+            message += `• Durasi: ${duration} ${unitUnit}\n`;
+            message += `• Tanggal: ${date}\n`;
+            message += `• Jam: ${time} WIB\n\n`;
+            message += `💳 *METODE PEMBAYARAN:* \n`;
+            message += `• ${payment}\n\n`;
+            message += `📍 *LOKASI ZAHRAN:* \n`;
+            message += `• Jl. Kavling Karet, Kab. Tangerang (Samping Pangkas Rambut Asgar)\n\n`;
+            message += `📝 *CATATAN:* \n`;
+            message += `${notes}\n\n`;
+            message += `Mohon konfirmasi ketersediaan unitnya. Terima kasih!`;
+
+            // Encode text for URL
+            const encodedMessage = encodeURIComponent(message);
+            const waUrl = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+            // Redirect to WhatsApp
+            window.open(waUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
